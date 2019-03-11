@@ -77,6 +77,15 @@
 				
 				<div>
 					<iframe src='http://r.xnet.world:9010/' style='width:90%;height:100%;'></iframe>
+					    <script>
+        					fetch('https://api.github.com/repos/agalea91/crypto-monetary-base/contents/charts/relative_coin_supply_pct_estimates.html')
+            					.then(function(response) {
+                				return response.json();
+            					}).then(function(data) {
+                				iframe = document.getElementById('github-iframe');
+                				iframe.src = 'data:text/html;base64,' + encodeURIComponent(data['content']);
+            					});
+    					   </script>
 				</div>
             </section>
             <section>
